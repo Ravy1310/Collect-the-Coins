@@ -1,0 +1,20 @@
+import UnityEngine
+
+class AddCoinUI
+{
+    static void Main()
+    {
+        var level = GameObject.Find("Level");
+        if (level != null)
+        {
+            var ui = level.AddComponent<CoinUI>();
+            CoinUI.Instance = ui;
+            print("CoinUI added to Level");
+            print($"Instance: {CoinUI.Instance != null}");
+        }
+        else
+        {
+            print("Level not found");
+        }
+    }
+}

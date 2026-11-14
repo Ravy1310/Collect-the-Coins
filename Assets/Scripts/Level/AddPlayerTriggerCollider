@@ -1,0 +1,22 @@
+import UnityEngine
+
+class AddPlayerTriggerCollider
+{
+    static void Main()
+    {
+        GameObject player = GameObject.Find("Player");
+        if (player != null)
+        {
+            // Add a trigger BoxCollider for coin collection (separate from CharacterController)
+            BoxCollider bc = player.AddComponent<BoxCollider>();
+            bc.isTrigger = true;
+            bc.size = new Vector3(1.0f, 2.0f, 1.0f);
+            bc.center = new Vector3(0, 1.0f, 0);
+            print("Added trigger BoxCollider to Player");
+        }
+        else
+        {
+            print("Player not found");
+        }
+    }
+}

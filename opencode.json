@@ -1,0 +1,10 @@
+{
+  "mcp": {
+    "kitwright": {
+      "url": "http://127.0.0.1:9485/p/0314070c/t/41697ad4c144ae48fa804e7ff04685a4/",
+      "type": "remote",
+      "enabled": true
+    }
+  },
+  "$schema": "https://opencode.ai/config.json"
+}

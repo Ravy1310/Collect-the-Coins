@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.kitwright.unity.mcp": "https://github.com/kitwright/unity-mcp.git#upm",
     "com.unity.ai.assistant": "2.21.0-pre.2",
     "com.unity.ai.inference": "2.6.1",
     "com.unity.collab-proxy": "2.13.6",

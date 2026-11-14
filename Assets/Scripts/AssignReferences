@@ -1,0 +1,47 @@
+import UnityEngine
+import UnityEngine.UI
+
+class AssignReferences
+    static function Main()
+        var gm = GameObject.FindObjectOfType<GameManager>();
+        if (gm == null) { print("GameManager not found in scene"); return; }
+        
+        var canvas = GameObject.Find("Canvas");
+        print($"Canvas found: {canvas != null}");
+        
+        var pauseMenu = GameObject.Find("PauseMenu");
+        print($"PauseMenu found: {pauseMenu != null}");
+        if (pauseMenu != null) gm.pauseMenuUI = pauseMenu;
+        
+        var gameOver = GameObject.Find("GameOver");
+        print($"GameOver found: {gameOver != null}");
+        if (gameOver != null) gm.gameOverUI = gameOver;
+        
+        var levelComplete = GameObject.Find("LevelComplete");
+        print($"LevelComplete found: {levelComplete != null}");
+        if (levelComplete != null) gm.levelCompleteUI = levelComplete;
+        
+        var pt = GameObject.Find("PauseText");
+        print($"PauseText found: {pt != null}");
+        if (pt != null && gm.pauseText == null) gm.pauseText = pt.GetComponentInChildren<Text>();
+        
+        var lct = GameObject.Find("LevelCompleteText");
+        print($"LevelCompleteText found: {lct != null}");
+        if (lct != null && gm.levelCompleteText == null) gm.levelCompleteText = lct.GetComponentInChildren<Text>();
+        
+        var btnRestart = GameObject.Find("BtnRestart");
+        print($"BtnRestart found: {btnRestart != null}");
+        if (btnRestart != null && gm.restartButton == null) gm.restartButton = btnRestart.GetComponent<Button>();
+        
+        var btnMainMenu = GameObject.Find("BtnMainMenu");
+        print($"BtnMainMenu found: {btnMainMenu != null}");
+        if (btnMainMenu != null && gm.mainMenuButton == null) gm.mainMenuButton = btnMainMenu.GetComponent<Button>();
+        
+        var btnPlayAgain = GameObject.Find("BtnPlayAgain");
+        print($"BtnPlayAgain found: {btnPlayAgain != null}");
+        if (btnPlayAgain != null && gm.continueButton == null) gm.continueButton = btnPlayAgain.GetComponent<Button>();
+        
+        print($"After assignment - restartButton: {gm.restartButton != null}, mainMenuButton: {gm.mainMenuButton != null}, continueButton: {gm.continueButton != null}");
+        print $"pauseText: {gm.pauseText != null}, levelCompleteText: {gm.levelCompleteText != null}";
+    end
+end
